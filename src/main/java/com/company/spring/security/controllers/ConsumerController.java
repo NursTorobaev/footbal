@@ -33,22 +33,4 @@ public class ConsumerController {
         model.addAttribute("roles", Role.values());
         return "consumerEdit";
     }
-
-    @PostMapping
-    public String consumerSave(@RequestParam String username,
-            @RequestParam Map<String, String> form,
-            @RequestParam("consumerId") Consumer consumer){
-        consumer.setUsername(username);
-        Set<String> roles = Arrays.stream(Role.values())
-                .map(Role::name).
-                collect(Collectors.toSet());
-        consumer.getRoles().clear();
-        for (String key : form.keySet()) {
-            if(roles.contains(key)){
-                consumer.getRoles().add(Role.valueOf(key));
-            }
-        }
-        consumerRepo.save(consumer);
-        return "redirect:/consumer";
-    }
 }
