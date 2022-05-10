@@ -1,6 +1,6 @@
-package com.company.spring.security.repos;
+package company.repos;
 
-import com.company.spring.security.api.Consumer;
+import company.api.Consumer;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ConsumerRepo extends CrudRepository<Consumer, Long> {

@@ -1,7 +1,7 @@
-package com.company.spring.security.swagger;
+package company.swagger;
 
-import com.company.spring.security.api.Consumer;
-import com.company.spring.security.repos.ConsumerRepo;
+import company.api.Consumer;
+import company.repos.ConsumerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

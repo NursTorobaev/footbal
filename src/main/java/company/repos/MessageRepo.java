@@ -1,6 +1,6 @@
-package com.company.spring.security.repos;
+package company.repos;
 
-import com.company.spring.security.api.Message;
+import company.api.Message;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

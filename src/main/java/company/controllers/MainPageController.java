@@ -1,8 +1,8 @@
-package com.company.spring.security.controllers;
+package company.controllers;
 
-import com.company.spring.security.api.Consumer;
-import com.company.spring.security.api.Message;
-import com.company.spring.security.repos.MessageRepo;
+import company.api.Consumer;
+import company.api.Message;
+import company.repos.MessageRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;

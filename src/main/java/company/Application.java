@@ -1,4 +1,4 @@
-package com.company.spring.security;
+package company;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,7 +21,7 @@ public class Application {
 	public Docket api(){
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.company.spring.security"))
+				.apis(RequestHandlerSelectors.basePackage("company"))
 				.build();
 	}
 }

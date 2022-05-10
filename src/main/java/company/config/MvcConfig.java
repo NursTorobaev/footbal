@@ -1,4 +1,4 @@
-package com.company.spring.security.config;
+package company.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

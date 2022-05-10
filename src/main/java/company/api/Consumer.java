@@ -1,4 +1,4 @@
-package com.company.spring.security.api;
+package company.api;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

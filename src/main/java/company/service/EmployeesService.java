@@ -1,6 +1,6 @@
-package com.company.spring.security.service;
+package company.service;
 
-import com.company.spring.security.repos.EmployeesRepo;
+import company.repos.EmployeesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
