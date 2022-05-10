@@ -1,6 +1,6 @@
-package com.company.spring.security.config;
+package company.config;
 
-import com.company.spring.security.service.ConsumerService;
+import company.service.ConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

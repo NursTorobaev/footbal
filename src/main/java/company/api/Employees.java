@@ -1,4 +1,4 @@
-package com.company.spring.security.api;
+package company.api;
 
 import javax.persistence.*;
 import java.util.Date;

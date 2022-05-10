@@ -1,6 +1,6 @@
-package com.company.spring.security.repos;
+package company.repos;
 
-import com.company.spring.security.api.Employees;
+import company.api.Employees;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 

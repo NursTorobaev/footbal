@@ -1,7 +1,7 @@
-package com.company.spring.security.controllers;
+package company.controllers;
 
-import com.company.spring.security.api.Employees;
-import com.company.spring.security.repos.EmployeesRepo;
+import company.api.Employees;
+import company.repos.EmployeesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
