@@ -17,22 +17,10 @@
                                            aria-describedby="datatables-reponsive_info">
                                         <thead>
                                         <tr>
-                                            <th class="sorting sorting_asc" tabindex="0"
-                                                aria-controls="datatables-reponsive" rowspan="1" colspan="1"
-                                                style="width: 263px;" aria-sort="ascending"
-                                                aria-label="Name: activate to sort column descending">ФИО
+                                            <th
+                                                style="width: 263px;">ФИО
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatables-reponsive"
-                                                rowspan="1" colspan="1" style="width: 391px;"
-                                                aria-label="Position: activate to sort column ascending">Должность
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatables-reponsive"
-                                                rowspan="1" colspan="1" style="width: 99px;"
-                                                aria-label="Age: activate to sort column ascending">Дата рождения
-                                            </th>
-                                            <th class="sorting" tabindex="0" aria-controls="datatables-reponsive"
-                                                rowspan="1" colspan="1" style="width: 180px;"
-                                                aria-label="Start date: activate to sort column ascending">Изменить
+                                            <th style="width: 391px;">Должность
                                             </th>
                                         </tr>
                                         </thead>
@@ -41,8 +29,6 @@
                                             <tr>
                                                 <td>${consumer.username}</td>
                                                 <td><#list consumer.roles as role>${role}<#sep>,</#list></td>
-                                                <td></td>
-                                                <td><a href="/consumer/${consumer.id}">edit</a></td>
                                             </tr>
                                         </#list>
                                         </tbody>

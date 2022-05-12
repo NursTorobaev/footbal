@@ -1,15 +1,13 @@
 <#macro page>
     <!DOCTYPE html>
-    <html >
+    <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
-        <title>Sweater</title>
+        <title>Home</title>
         <link rel="stylesheet" href="/static/css/light.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-        <#nested>
+    <#nested>
     </body>
     </html>
 </#macro>

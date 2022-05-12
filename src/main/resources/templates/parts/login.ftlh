@@ -11,15 +11,21 @@
                                         <form action="${path}" method="post">
                                             <div class="mb-3">
                                                 <label class="form-label">Username</label>
-                                                <input type="text" name="username" class="form-control form-control-lg" placeholder="Enter your username">
+                                                <input type="text" name="username" class="form-control form-control-lg"
+                                                       placeholder="Enter your username">
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Password</label>
-                                                <input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password">
+                                                <input class="form-control form-control-lg" type="password"
+                                                       name="password" placeholder="Enter your password">
                                             </div>
                                             <input type="hidden" name="_csrf" value="${_csrf.token}">
-                                            <div><input type="submit" value="Sign In" class="btn btn-lg btn-primary"></div>
-                                            <div><a href="/sign-up">Sign Up</a></div>
+                                            <div><input type="submit" value="Sign In" class="btn btn-lg btn-primary">
+                                            </div>
+                                            <div class="form-group-lg">
+                                                <a href="/sign-up">Sign Up</a>
+                                                <a class="text-end" href="/">Home</a>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -34,6 +40,6 @@
 <#macro logout>
     <form action="/logout" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <input type="submit" value="Sign Out">
+        <div><input type="submit" value="Sign Out" class="btn btn-lg btn-primary"></div>
     </form>
 </#macro>

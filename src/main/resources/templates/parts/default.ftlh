@@ -8,7 +8,7 @@
         <meta name="description" content="Responsive Bootstrap 5 Admin &amp; Dashboard Template">
         <meta name="author" content="Bootlab">
 
-        <title>Main page</title>
+        <title>InfoSystems</title>
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -70,21 +70,10 @@
                         <path d="M10,20c-0.1,0-0.3,0-0.4-0.1l-9-4c-0.5-0.2-0.7-0.8-0.5-1.3c0.2-0.5,0.8-0.7,1.3-0.5l8.6,3.8l8.6-3.8c0.5-0.2,1.1,0,1.3,0.5
               c0.2,0.5,0,1.1-0.5,1.3l-9,4C10.3,20,10.1,20,10,20z"/></svg>
 
-                    <span class="align-middle me-3">InfoSystema</span>
+                    <span class="align-middle me-3">InfoSystems</span>
                 </a>
                 <ul class="sidebar-nav">
-                    <a class="sidebar-link" href="/calendar">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                             class="feather feather-calendar align-middle">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        <span class="align-middle">Календарь</span>
-                    </a>
-                    <a class="sidebar-link" href="/employees">
+                    <a class="sidebar-link" href="/consumer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                              class="feather feather-list align-middle">
@@ -95,7 +84,7 @@
                             <line x1="3" y1="12" x2="3.01" y2="12"></line>
                             <line x1="3" y1="18" x2="3.01" y2="18"></line>
                         </svg>
-                        <span class="align-middle">Сотрудники</span>
+                        <span class="align-middle">Пользователи</span>
                     </a>
                 </ul>
             </div>
@@ -110,22 +99,13 @@
                         <div class="col-6 text-start">
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <a class="text-muted" href="#">Support</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="text-muted" href="#">Help Center</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="text-muted" href="#">Privacy</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="text-muted" href="#">Terms of Service</a>
+                                    <a class="text-muted" href="/">Home</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col-6 text-end">
                             <p class="mb-0">
-                                &copy; 2022 - <a href="https://infosystema.kg/" class="text-muted">InfoSystems</a>
+                                &copy; 2022 - InfoSystems
                             </p>
                         </div>
                     </div>
