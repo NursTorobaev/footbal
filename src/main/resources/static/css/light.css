@@ -15896,6 +15896,9 @@ body[data-sidebar-behavior=compact][data-sidebar-position=right] .sidebar.collap
 }
 
 table.dataTable tbody > tr.selected, table.dataTable tbody > tr > .selected {
+}
+
+table.dataTable tbody > tr.selected, table.dataTable tbody > tr > .selected {
     --bs-table-accent-bg: $ primary
 }
 
