@@ -1,5 +1,6 @@
 package company.controllers;
 
+import com.google.common.hash.Hashing;
 import company.api.Consumer;
 import company.api.Role;
 import company.repos.ConsumerRepo;
@@ -9,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.nio.charset.StandardCharsets;
 
 @Controller
 public class RegistrationController {
@@ -24,13 +27,19 @@ public class RegistrationController {
     public String regPost(@RequestParam String username,
                           @RequestParam String password,
                           Model model){
+        String hash = Hashing.sha256()
+                .hashString(password, StandardCharsets.UTF_8)
+                .toString();
         Consumer consumer = new Consumer(username, password);
+        System.out.println(consumerRepo.findConsumerByUsername("admin") != null);
         if(consumerRepo.findConsumerByUsername(username) != null){
-            return "redirect:/error";
+            return "/error";
         }
-        consumer.setActive(true);
-        consumer.setRoles(Role.USER);
-        consumerRepo.save(consumer);
-        return "redirect:/login";
+        else{
+            consumer.setActive(true);
+            consumer.setRoles(Role.USER);
+            consumerRepo.save(consumer);
+            return "/login";
+        }
     }
 }
