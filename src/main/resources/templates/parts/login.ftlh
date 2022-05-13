@@ -12,13 +12,18 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Username</label>
                                                 <input type="text" name="username" class="form-control form-control-lg"
-                                                       placeholder="Enter your username">
+                                                       placeholder="Enter your username"/>
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Password</label>
                                                 <input class="form-control form-control-lg" type="password"
-                                                       name="password" placeholder="Enter your password">
+                                                       id="password" name="password" placeholder="Enter your password" onchange="convert()"/>
                                             </div>
+                                            <script>
+                                                function convert(){
+                                                    let a = document.getElementById("password").value;
+                                                }
+                                            </script>
                                             <input type="hidden" name="_csrf" value="${_csrf.token}">
                                             <div><input type="submit" value="Sign In" class="btn btn-lg btn-primary">
                                             </div>
@@ -40,6 +45,6 @@
 <#macro logout>
     <form action="/logout" method="post">
         <input type="hidden" name="_csrf" value="${_csrf.token}">
-        <div><input type="submit" value="Sign Out" class="btn btn-lg btn-primary"></div>
+        <div><input type="submit" value="Log Out" class="btn btn-lg btn-primary"></div>
     </form>
 </#macro>
