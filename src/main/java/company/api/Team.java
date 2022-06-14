@@ -3,16 +3,78 @@ package company.api;
 import javax.persistence.*;
 
 @Entity
-@Table(name="team")
+@Table(name = "team")
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
 
+    private String departmentName;
+    @Column(name="goals")
+    private short goals;
+
+    @Column(name = "wins")
+    private short wins;
+    @Column(name="loses")
+    private short loses;
+    @Column(name="draws")
+    private short draws;
+
     private short games;
     private short missed;
-    private String score;
+    private short score;
+
+    public Team() {
+    }
+
+    public Team(String name, String departmentName, short games, short missed, short score) {
+        this.name = name;
+        this.departmentName = departmentName;
+        this.games = games;
+        this.missed = missed;
+        this.score = score;
+    }
+
+    public short getGoals() {
+        return goals;
+    }
+
+    public void setGoals(short goals) {
+        this.goals = goals;
+    }
+
+    public short getWins() {
+        return wins;
+    }
+
+    public void setWins(short wins) {
+        this.wins = wins;
+    }
+
+    public short getLoses() {
+        return loses;
+    }
+
+    public void setLoses(short loses) {
+        this.loses = loses;
+    }
+
+    public short getDraws() {
+        return draws;
+    }
+
+    public void setDraws(short draws) {
+        this.draws = draws;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
 
     public short getGames() {
         return games;
@@ -46,11 +108,11 @@ public class Team {
         this.name = name;
     }
 
-    public String getScore() {
+    public short getScore() {
         return score;
     }
 
-    public void setScore(String score) {
+    public void setScore(short score) {
         this.score = score;
     }
 }

@@ -9,7 +9,7 @@
                     <div class="col-6 text-start">
                         <ul class="list-inline">
                             <li class="list-inline-item" id="onlyAdmin">
-                                &copy; 2022 - <a class="text-muted" href="/main">InfoSystems</a>
+                                <a class="text-muted" href="/main">InfoSystems</a>
                             </li>
                             <li class="list-inline-item">
                                 <a class="text-muted" href="https://www.uefa.tv/">news</a>
