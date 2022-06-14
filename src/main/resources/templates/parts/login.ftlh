@@ -24,12 +24,10 @@
                                                     let a = document.getElementById("password").value;
                                                 }
                                             </script>
-                                            <input type="hidden" name="_csrf" value="${_csrf.token}">
                                             <div><input type="submit" value="Sign In" class="btn btn-lg btn-primary">
                                             </div>
                                             <div class="form-group-lg">
                                                 <a href="/sign-up">Sign Up</a>
-                                                <a class="text-end" href="/">Home</a>
                                             </div>
                                         </form>
                                     </div>
@@ -44,7 +42,6 @@
 </#macro>
 <#macro logout>
     <form action="/logout" method="post">
-        <input type="hidden" name="_csrf" value="${_csrf.token}">
         <div><input type="submit" value="Log Out" class="btn btn-lg btn-primary"></div>
     </form>
 </#macro>
