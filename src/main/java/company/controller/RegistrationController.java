@@ -1,8 +1,8 @@
-package company.controllers;
+package company.controller;
 
 import com.google.common.hash.Hashing;
-import company.api.Consumer;
-import company.api.Role;
+import company.entity.Consumer;
+import company.entity.Role;
 import company.repos.ConsumerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

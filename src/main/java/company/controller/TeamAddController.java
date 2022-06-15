@@ -1,6 +1,6 @@
-package company.controllers;
+package company.controller;
 
-import company.api.Team;
+import company.entity.Team;
 import company.repos.TeamRepo;
 import io.swagger.models.Model;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class TeamAddController {
     }
     @PostMapping
     public String postTeams(HttpServletRequest request, Model model) {
-        Team team = new Team(request.getParameter("teamName"), request.getParameter("departmentName"), (short) 0, (short) 0, (short) 0);
+        Team team = new Team(request.getParameter("teamName"), request.getParameter("departmentName"), (short) 0, (short) 0);
         team.setDraws((short)0);
         team.setGoals((short)0);
         team.setLoses((short)0);
