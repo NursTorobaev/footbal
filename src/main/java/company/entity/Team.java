@@ -1,4 +1,4 @@
-package company.api;
+package company.entity;
 
 import javax.persistence.*;
 
@@ -23,17 +23,15 @@ public class Team {
 
     private short games;
     private short missed;
-    private short score;
 
     public Team() {
     }
 
-    public Team(String name, String departmentName, short games, short missed, short score) {
+    public Team(String name, String departmentName, short games, short missed) {
         this.name = name;
         this.departmentName = departmentName;
         this.games = games;
         this.missed = missed;
-        this.score = score;
     }
 
     public short getGoals() {
@@ -106,13 +104,5 @@ public class Team {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public short getScore() {
-        return score;
-    }
-
-    public void setScore(short score) {
-        this.score = score;
     }
 }

@@ -25,7 +25,6 @@
                                                 <th style="width: 250px;">Поражения</th>
                                                 <th style="width: 250px;">Ничьи</th>
                                                 <th style="width: 250px;">Игры</th>
-                                                <th style="width: 250px;">Очки</th>
                                                 <th style="width: 391px;">Отдел</th>
                                             </tr>
                                             </thead>
@@ -39,7 +38,6 @@
                                                     <td>${team.loses}</td>
                                                     <td>${team.draws}</td>
                                                     <td>${team.games}</td>
-                                                    <td>${team.score}</td>
                                                     <td>${team.departmentName}</td>
                                                 </tr>
                                             </#list>

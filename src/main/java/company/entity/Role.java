@@ -1,4 +1,4 @@
-package company.api;
+package company.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 

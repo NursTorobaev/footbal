@@ -1,6 +1,6 @@
 package company.swagger;
 
-import company.api.Consumer;
+import company.entity.Consumer;
 import company.repos.ConsumerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

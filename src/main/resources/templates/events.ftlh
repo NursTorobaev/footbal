@@ -15,7 +15,7 @@
                                 <a class="text-muted" href="/">Команды</a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="text-muted" href="events">Турниры</a>
+                                <a class="text-muted" href="/events">Турниры</a>
                             </li>
                             <li class="list-inline-item">
                                 <a class="text-muted" href="https://www.uefa.tv/">Новости</a>
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <form action="/" method="get">
+            <form action="/events" method="get">
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
@@ -49,26 +49,18 @@
                                                     <thead>
                                                     <tr>
                                                         <th style="width: 263px;">Наименование</th>
-                                                        <th style="width: 250px;">Голы</th>
-                                                        <th style="width: 250px;">Пропущенные</th>
-                                                        <th style="width: 250px;">Победы</th>
-                                                        <th style="width: 250px;">Поражения</th>
-                                                        <th style="width: 250px;">Ничьи</th>
-                                                        <th style="width: 250px;">Игры</th>
-                                                        <th style="width: 391px;">Отдел</th>
+                                                        <th style="width: 250px;">Дата с:</th>
+                                                        <th style="width: 250px;">Дата по:</th>
+                                                        <th style="width: 250px;">Логотип</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <#list teams as team>
+                                                    <#list events as event>
                                                         <tr>
-                                                            <td>${team.name}</td>
-                                                            <td>${team.goals}</td>
-                                                            <td>${team.missed}</td>
-                                                            <td>${team.wins}</td>
-                                                            <td>${team.loses}</td>
-                                                            <td>${team.draws}</td>
-                                                            <td>${team.games}</td>
-                                                            <td>${team.departmentName}</td>
+                                                            <td>${event.name}</td>
+                                                            <td>${event.dateFrom}</td>
+                                                            <td>${event.dateTo}</td>
+                                                            <td>${event.logo}</td>
                                                         </tr>
                                                     </#list>
                                                     </tbody>

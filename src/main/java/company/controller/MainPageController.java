@@ -1,4 +1,4 @@
-package company.controllers;
+package company.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
