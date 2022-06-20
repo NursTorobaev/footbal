@@ -1,8 +1,11 @@
 package company.entity;
 
 import javax.persistence.*;
-import java.awt.*;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "tournament")
@@ -20,7 +23,15 @@ public class Tournament {
     @Column(name = "date_to")
     private Date dateTo;
 
+    @OneToMany
+    @JoinColumn(name = "tournament_id", insertable = true)
+    private List<Team> teams;
+
     public Tournament() {
+    }
+    public String convertDateToString(Date date) {
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        return dateFormat.format(date);
     }
 
     public Tournament(String name, Date dateFrom, Date dateTo) {
@@ -29,6 +40,13 @@ public class Tournament {
         this.dateTo = dateTo;
     }
 
+    public List<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(List<Team> teams) {
+        this.teams = teams;
+    }
 
     public long getId() {
         return id;
@@ -46,16 +64,16 @@ public class Tournament {
         this.name = name;
     }
 
-    public Date getDateFrom() {
-        return dateFrom;
+    public String getDateFrom() {
+        return convertDateToString(dateFrom);
     }
 
     public void setDateFrom(Date dateFrom) {
         this.dateFrom = dateFrom;
     }
 
-    public Date getDateTo() {
-        return dateTo;
+    public String getDateTo() {
+        return convertDateToString(dateTo);
     }
 
     public void setDateTo(Date dateTo) {

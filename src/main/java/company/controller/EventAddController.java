@@ -1,65 +1,61 @@
 package company.controller;
 
-import company.entity.Attachment;
-import company.model.ResponseData;
-import company.repos.AttachmentRepo;
-import company.service.AttachmentService;
+import company.entity.Team;
+import company.entity.Tournament;
+import company.repos.TeamRepo;
+import company.repos.TournamentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
+@PreAuthorize("hasAuthority('ADMIN')")
 public class EventAddController {
-    private AttachmentService attachmentService;
 
     @Autowired
-    private AttachmentRepo attachmentRepo;
+    private TeamRepo teamRepo;
 
-    public EventAddController(AttachmentService attachmentService){
-        this.attachmentService = attachmentService;
-    }
+    @Autowired
+    private TournamentRepo tournamentRepo;
 
-    @GetMapping("/event_add")
-    public String eventAdd(Model model){
+    @RequestMapping(value = "/event_add", method = RequestMethod.GET)
+    public String eventGet(Model model) {
+        List<Team> teams = (List<Team>) teamRepo.findAll();
+        List<String> tms = new ArrayList<>();
+        for (Team team:teams) {
+            tms.add(team.getName());
+        }
+        model.addAttribute("teams", tms);
         return "/event_add";
     }
 
-    @PostMapping("/event_add")
-    public ResponseData uploadFile(@RequestParam("file")MultipartFile file) throws Exception {
-        Attachment attachment = null;
-        String downloadURL = "";
-        attachment = attachmentService.saveAttachment(file);
-        attachmentRepo.save(attachment);
-        downloadURL = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/download/")
-                .path(attachment.getId())
-                .toUriString();
+    @RequestMapping(value="/event_add", method = RequestMethod.POST)
+    public String eventPost(@RequestParam String name, @RequestParam String dateFrom,
+                            @RequestParam String dateTo,
+                            @RequestParam("file") File file, HttpServletRequest request) throws ParseException {
 
-        return new ResponseData(attachment.getFileName(),
-                downloadURL,
-                file.getContentType(),
-                file.getSize());
+        Tournament tournament = new Tournament(name, new SimpleDateFormat("yyyy-MM-dd").parse(dateFrom), new SimpleDateFormat("yyyy-MM-dd").parse(dateTo));
+        String[] teamstring = request.getParameterValues("team");
+        List<Team> teams = new ArrayList<>();
+        for(String team: teamstring){
+            Team curr = teamRepo.findByName(team);
+            teams.add(curr);
+        }
+        System.out.println(teams);
+        tournament.setTeams(teams);
+        tournamentRepo.save(tournament);
+        return "redirect:/tournament";
     }
 
-    @GetMapping("/download/{fileId}")
-    public ResponseEntity<Resource> downloadFile(@PathVariable String fileId) throws Exception {
-        Attachment attachment = null;
-        attachment = attachmentService.getAttachment(fileId);
-        return ResponseEntity.ok()
-                .contentType(MediaType.parseMediaType(attachment.getFileType()))
-                .header(HttpHeaders.CONTENT_DISPOSITION,
-                        "attachment; filename=\"" + attachment.getFileName() + "\"")
-                .body(new ByteArrayResource(attachment.getData()));
-    }
 }
