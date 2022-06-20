@@ -1,6 +1,7 @@
 package company.controller;
 
 import company.entity.Consumer;
+import company.entity.Tournament;
 import company.repos.TournamentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -8,7 +9,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.Optional;
 
 @Controller
 @PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
@@ -16,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class EventsController {
     @Autowired
     private TournamentRepo tournamentRepo;
+
     @GetMapping
     public String events(Authentication authentication, Model model){
         Consumer consumer = (Consumer) authentication.getPrincipal();

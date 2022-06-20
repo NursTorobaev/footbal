@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 @RestController
-@PreAuthorize("hasAuthority('ADMIN')")
+
 public class ConsumerSwagger {
     @Autowired
     private ConsumerRepo consumerRepo;
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @RequestMapping(method = RequestMethod.GET, path = "/swagger/consumer")
-    public ArrayList<Consumer> getConsumers(){
+    public ArrayList<Consumer> getConsumers() {
         return (ArrayList<Consumer>) consumerRepo.findAll();
     }
 }

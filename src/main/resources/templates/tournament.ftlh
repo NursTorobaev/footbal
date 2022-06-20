@@ -22,7 +22,6 @@
                                                 <th style="width: 263px;">Наименование</th>
                                                 <th style="width: 250px;">Дата с:</th>
                                                 <th style="width: 250px;">Дата по:</th>
-                                                <th style="width: 250px;">Логотип</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -31,7 +30,6 @@
                                                     <td>${event.name}</td>
                                                     <td>${event.dateFrom}</td>
                                                     <td>${event.dateTo}</td>
-                                                    <td>${event.logo}</td>
                                                 </tr>
                                             </#list>
                                             </tbody>
