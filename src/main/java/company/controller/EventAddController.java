@@ -2,6 +2,7 @@ package company.controller;
 
 import company.entity.Team;
 import company.entity.Tournament;
+import company.repos.TeamEventRepo;
 import company.repos.TeamRepo;
 import company.repos.TournamentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,9 @@ import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @PreAuthorize("hasAuthority('ADMIN')")
@@ -25,6 +28,9 @@ public class EventAddController {
 
     @Autowired
     private TeamRepo teamRepo;
+
+    @Autowired
+    private TeamEventRepo teamEventRepo;
 
     @Autowired
     private TournamentRepo tournamentRepo;
@@ -47,13 +53,12 @@ public class EventAddController {
 
         Tournament tournament = new Tournament(name, new SimpleDateFormat("yyyy-MM-dd").parse(dateFrom), new SimpleDateFormat("yyyy-MM-dd").parse(dateTo));
         String[] teamstring = request.getParameterValues("team");
-        List<Team> teams = new ArrayList<>();
+        Set<Team> teams = new HashSet<>();
         for(String team: teamstring){
             Team curr = teamRepo.findByName(team);
             teams.add(curr);
         }
         System.out.println(teams);
-        tournament.setTeams(teams);
         tournamentRepo.save(tournament);
         return "redirect:/tournament";
     }

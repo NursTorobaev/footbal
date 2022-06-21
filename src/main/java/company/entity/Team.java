@@ -9,7 +9,10 @@ public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(name="name")
     private String name;
+    @Column(name="department_name")
 
     private String departmentName;
     @Column(name="goals")
@@ -22,8 +25,11 @@ public class Team {
     @Column(name="draws")
     private short draws;
 
+    @Column(name="games")
     private short games;
+    @Column(name="missed")
     private short missed;
+
 
     public Team() {
     }
@@ -34,6 +40,7 @@ public class Team {
         this.games = games;
         this.missed = missed;
     }
+
 
     public short getGoals() {
         return goals;

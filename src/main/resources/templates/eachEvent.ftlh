@@ -1,30 +1,9 @@
 <#import "parts/common.ftlh" as c>
 <#import "parts/login.ftlh" as l>
 <@c.page>
-    <div class="main">
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row text-muted">
-                    <div class="col-6 text-start">
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <a class="text-muted" href="/">Команды</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-muted" href="/events">Турниры</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a class="text-muted" href="https://www.uefa.tv/">Новости</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-6 text-end">
-                        <p class="mb-0">
-                        <div class="text-end"><@l.logout/></div>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+
+    <p3>${selectedEvent.get().name}</p3>
+    <p3>${selectedEvent.get().dateFrom}</p3>
+    <p3>${selectedEvent.get().dateTo}</p3>
+
 </@c.page>
