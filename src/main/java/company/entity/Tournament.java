@@ -1,9 +1,13 @@
 package company.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "tournament")
@@ -21,6 +25,10 @@ public class Tournament {
     @Column(name = "date_to")
     private Date dateTo;
 
+    @JsonIgnore
+    @ManyToMany(mappedBy = "tournaments")
+    private Set<Team> teams = new HashSet<>();
+
 
     public Tournament() {
     }
@@ -33,6 +41,14 @@ public class Tournament {
         this.name = name;
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
+    }
+
+    public Set<Team> getTeams() {
+        return teams;
+    }
+
+    public void setTeams(Set<Team> teams) {
+        this.teams = teams;
     }
 
     public long getId() {

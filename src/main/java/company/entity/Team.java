@@ -1,7 +1,9 @@
 package company.entity;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "team")
@@ -30,6 +32,14 @@ public class Team {
     @Column(name="missed")
     private short missed;
 
+    @ManyToMany
+    @JoinTable(
+            name = "tournament_teams",
+            joinColumns = @JoinColumn(name = "team_id"),
+            inverseJoinColumns = @JoinColumn(name = "tournament_id")
+    )
+    private Set<Tournament> tournaments = new HashSet<>();
+
 
     public Team() {
     }
@@ -41,6 +51,13 @@ public class Team {
         this.missed = missed;
     }
 
+    public Set<Tournament> getTournaments() {
+        return tournaments;
+    }
+
+    public void setTournaments(Set<Tournament> tournaments) {
+        this.tournaments = tournaments;
+    }
 
     public short getGoals() {
         return goals;

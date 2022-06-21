@@ -2,7 +2,6 @@ package company.controller;
 
 import company.entity.Team;
 import company.entity.Tournament;
-import company.repos.TeamEventRepo;
 import company.repos.TeamRepo;
 import company.repos.TournamentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +29,6 @@ public class EventAddController {
     private TeamRepo teamRepo;
 
     @Autowired
-    private TeamEventRepo teamEventRepo;
-
-    @Autowired
     private TournamentRepo tournamentRepo;
 
     @RequestMapping(value = "/event_add", method = RequestMethod.GET)
@@ -53,13 +49,14 @@ public class EventAddController {
 
         Tournament tournament = new Tournament(name, new SimpleDateFormat("yyyy-MM-dd").parse(dateFrom), new SimpleDateFormat("yyyy-MM-dd").parse(dateTo));
         String[] teamstring = request.getParameterValues("team");
-        Set<Team> teams = new HashSet<>();
+        tournamentRepo.save(tournament);
+        Set<Tournament> events = new HashSet<>();
+        events.add(tournament);
         for(String team: teamstring){
             Team curr = teamRepo.findByName(team);
-            teams.add(curr);
+            curr.setTournaments(events);
+            teamRepo.save(curr);
         }
-        System.out.println(teams);
-        tournamentRepo.save(tournament);
         return "redirect:/tournament";
     }
 
