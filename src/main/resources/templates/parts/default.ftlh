@@ -100,6 +100,7 @@
                             style="">
                             <li class="sidebar-item"><a class="sidebar-link" href="/team">Команды</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="/tournament">Игры</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="/players">Игроки</a></li>
                         </ul>
                     </li>
                 </ul>

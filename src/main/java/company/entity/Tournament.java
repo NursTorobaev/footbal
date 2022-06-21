@@ -2,10 +2,8 @@ package company.entity;
 
 import javax.persistence.*;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "tournament")
@@ -23,9 +21,6 @@ public class Tournament {
     @Column(name = "date_to")
     private Date dateTo;
 
-    @OneToMany
-    @JoinColumn(name = "tournament_id", insertable = true)
-    private List<Team> teams;
 
     public Tournament() {
     }
@@ -38,14 +33,6 @@ public class Tournament {
         this.name = name;
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
-    }
-
-    public List<Team> getTeams() {
-        return teams;
-    }
-
-    public void setTeams(List<Team> teams) {
-        this.teams = teams;
     }
 
     public long getId() {

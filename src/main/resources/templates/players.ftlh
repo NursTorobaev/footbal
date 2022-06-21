@@ -1,7 +1,6 @@
-<#import "parts/common.ftlh" as c>
-<#import "parts/login.ftlh" as l>
+<#import "parts/default.ftlh" as c>
 <@c.page>
-    <form action="/" method="get">
+    <form action="/events" method="get">
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -20,27 +19,23 @@
                                                aria-describedby="datatables-reponsive_info">
                                             <thead>
                                             <tr>
-                                                <th style="width: 263px;">Наименование</th>
-                                                <th style="width: 250px;">Голы</th>
-                                                <th style="width: 250px;">Пропущенные</th>
-                                                <th style="width: 250px;">Победы</th>
-                                                <th style="width: 250px;">Поражения</th>
-                                                <th style="width: 250px;">Ничьи</th>
-                                                <th style="width: 250px;">Игры</th>
-                                                <th style="width: 391px;">Отдел</th>
+                                                <th>Номер</th>
+                                                <th>ФИО</th>
+                                                <th>Должность</th>
+                                                <th>Дата рождения</th>
+                                                <th>Позиция</th>
+                                                <th>Команда</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <#list teams as team>
+                                            <#list players as player>
                                                 <tr>
-                                                    <td>${team.name}</td>
-                                                    <td>${team.goals}</td>
-                                                    <td>${team.missed}</td>
-                                                    <td>${team.wins}</td>
-                                                    <td>${team.loses}</td>
-                                                    <td>${team.draws}</td>
-                                                    <td>${team.games}</td>
-                                                    <td>${team.departmentName}</td>
+                                                    <td>${player.number}</td>
+                                                    <td>${player.name}</td>
+                                                    <td>${player.workPosition}</td>
+                                                    <td>${player.birthday}</td>
+                                                    <td>${player.position}</td>
+                                                    <td>${player.team.name}</td>
                                                 </tr>
                                             </#list>
                                             </tbody>
@@ -48,11 +43,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <h5 class="text-end"><a href="player_add">Добавить</a></h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-
 </@c.page>

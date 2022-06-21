@@ -13,24 +13,24 @@
                             <div class="col-12 col-lg-6">
                                 <div class="mb-3">
                                     <label>Название турнира</label>
-                                    <input type="text" class="form-control" name="name">
+                                    <input type="text" class="form-control" name="name" required>
                                     <span class="font-13"></span>
                                 </div>
                                 <div class="mb-3">
                                     <label>Дата с:</label>
-                                    <input type="date" class="form-control" name="dateFrom">
+                                    <input type="date" class="form-control" name="dateFrom" required>
                                     <span class="font-13">MM/ДД/ГГГГ</span>
                                 </div>
                             </div>
                             <div class="col-12 col-lg-6">
                                 <div class="mb-3">
                                     <label>Лого</label>
-                                    <input type="file" class="form-control" name="file">
+                                    <input type="file" class="form-control" name="file" required>
                                     <span class="font-13"></span>
                                 </div>
                                 <div class="mb-3">
                                     <label>Дата по:</label>
-                                    <input type="date" class="form-control" name="dateTo">
+                                    <input type="date" class="form-control" name="dateTo" required>
                                     <span class="font-13">MM/ДД/ГГГГ</span>
                                 </div>
                             </div>
