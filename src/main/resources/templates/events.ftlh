@@ -20,9 +20,9 @@
                                                aria-describedby="datatables-reponsive_info">
                                             <thead>
                                             <tr>
-                                                <th style="width: 263px;">Наименование</th>
-                                                <th style="width: 250px;">Дата с:</th>
-                                                <th style="width: 250px;">Дата по:</th>
+                                                <th>Наименование</th>
+                                                <th>Дата с:</th>
+                                                <th>Дата по:</th>
                                             </tr>
                                             </thead>
                                             <tbody>
