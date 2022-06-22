@@ -1,5 +1,4 @@
-<#import "parts/common.ftlh" as c>
-<#import "parts/login.ftlh" as l>
+<#import "parts/default.ftlh" as c>
 <@c.page>
     <div class="row">
         <div class="col-12">

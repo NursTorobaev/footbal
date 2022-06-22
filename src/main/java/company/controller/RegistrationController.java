@@ -31,7 +31,6 @@ public class RegistrationController {
                 .hashString(password, StandardCharsets.UTF_8)
                 .toString();
         Consumer consumer = new Consumer(username, password);
-        System.out.println(consumerRepo.findConsumerByUsername("admin") != null);
         if(consumerRepo.findConsumerByUsername(username) != null){
             return "/error";
         }
