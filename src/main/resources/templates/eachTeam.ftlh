@@ -5,8 +5,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title">Команды турнира ${selectedEvent.get().name}</h5>
-                    <h6 class="card-title">С ${selectedEvent.get().dateFrom} -:- ${selectedEvent.get().dateTo}</h6>
+                    <h5 class="card-title">Игроки команды ${team.get().name}</h5>
                 </div>
                 <div class="row">
                     <div class="card-body">
@@ -20,15 +19,21 @@
                                            aria-describedby="datatables-reponsive_info">
                                         <thead>
                                         <tr>
-                                            <th>Наименование</th>
-                                            <th>Отдел</th>
+                                            <th>Номер</th>
+                                            <th>ФИО</th>
+                                            <th>Должность</th>
+                                            <th>Дата рождения</th>
+                                            <th>Позиция</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <#list teams as team>
+                                        <#list players as player>
                                             <tr>
-                                                <td>${team.name}</td>
-                                                <td>${team.departmentName}</td>
+                                                <td>${player.number}</td>
+                                                <td>${player.name}</td>
+                                                <td>${player.workPosition}</td>
+                                                <td>${player.birthday}</td>
+                                                <td>${player.position}</td>
                                             </tr>
                                         </#list>
                                         </tbody>

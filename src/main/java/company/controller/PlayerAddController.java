@@ -30,9 +30,6 @@ public class PlayerAddController {
     public String playerAddPost(@RequestParam String name, @RequestParam int number, @RequestParam String birthday, @RequestParam String workPosition, @RequestParam String selectedTeam, @RequestParam String position){
         Player player = new Player(name, number, birthday, workPosition, position);
         player.setTeam(teamRepo.findByName(selectedTeam));
-        System.out.println(player.getName() + "    " + player.getBirthday() + "   " + player.getWorkPosition() + "   " + player.getPosition());
-        System.out.println(player.getNumber());
-        System.out.println(player.getTeam().getName());
         playerRepo.save(player);
         return "redirect:/players";
     }

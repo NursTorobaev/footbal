@@ -33,7 +33,7 @@
                                             <tbody>
                                             <#list teams as team>
                                                 <tr>
-                                                    <td>${team.name}</td>
+                                                    <td><a href="/team/${team.id}">${team.name}</a></td>
                                                     <td>${team.goals}</td>
                                                     <td>${team.missed}</td>
                                                     <td>${team.wins}</td>

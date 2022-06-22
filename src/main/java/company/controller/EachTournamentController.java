@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.Optional;
 
 @Controller
-@PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
-public class EachEventController {
+@PreAuthorize("hasAuthority('ADMIN')")
+public class EachTournamentController {
     @Autowired
     private TournamentRepo tournamentRepo;
-    @GetMapping("/eachEvent/{id}")
-    public String eachEvent(@PathVariable("id") Long id, Authentication authentication, Model model){
+    @GetMapping("/eachTournament/{id}")
+    public String eachGet(Authentication authentication, @PathVariable("id") Long id, Model model){
         Consumer consumer = (Consumer) authentication.getPrincipal();
         model.addAttribute("consumer", consumer.getRoles().toString());
         Optional<Tournament> tournament = tournamentRepo.findById(id);
-        model.addAttribute("selectedEvent", tournament);
+        model.addAttribute("selectedEvent", tournamentRepo.findById(id));
         model.addAttribute("teams", tournament.get().getTeams());
-        return "eachEvent";
+        return "eachTournament";
     }
 }

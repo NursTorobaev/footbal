@@ -27,7 +27,7 @@
                                             <tbody>
                                             <#list events as event>
                                                 <tr>
-                                                    <td>${event.name}</td>
+                                                    <td><a href="/eachTournament/${event.id}">${event.name}</a></td>
                                                     <td>${event.dateFrom}</td>
                                                     <td>${event.dateTo}</td>
                                                 </tr>
