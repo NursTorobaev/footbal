@@ -43,6 +43,15 @@
             let role = document.getElementById('hiddenRole').value;
             if (role !== '[ADMIN]') document.getElementById('onlyAdmin').style.display = 'none';
         </script>
+        <script src="/static/js/app.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Datatables Responsive
+                $("#datatables-reponsive").DataTable({
+                    responsive: true
+                });
+            });
+        </script>
     </div>
     </body>
     </html>

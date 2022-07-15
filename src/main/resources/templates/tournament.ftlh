@@ -27,7 +27,7 @@
                                             <tbody>
                                             <#list events as event>
                                                 <tr>
-                                                    <td><a href="/eachTournament/${event.id}">${event.name}</a></td>
+                                                    <td><a href="/tournament/${event.id}">${event.name}</a></td>
                                                     <td>${event.dateFrom}</td>
                                                     <td>${event.dateTo}</td>
                                                 </tr>
@@ -35,13 +35,13 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    <div class="text-end mt-2"><a href="team_add">Добавить</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <h5 class="text-end"><a href="event_add">Добавить</a></h5>
         </div>
     </form>
 </@c.page>

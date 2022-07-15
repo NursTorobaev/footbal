@@ -31,7 +31,7 @@
                                             <tbody>
                                             <#list teams as team>
                                                 <tr>
-                                                    <td>${team.name}</td>
+                                                    <td><a href="/every-team/${team.id}">${team.name}</a></td>
                                                     <td>${team.goals}</td>
                                                     <td>${team.missed}</td>
                                                     <td>${team.wins}</td>
@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h5 class="text-end"><a href="team_add">Добавить</a></h5>
+                            <div class="text-end mt-2"><a href="team_add">Добавить</a></div>
                         </div>
                     </div>
                 </div>

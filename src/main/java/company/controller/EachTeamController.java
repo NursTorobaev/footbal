@@ -19,7 +19,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Controller
-@PreAuthorize("hasAuthority('ADMIN')")
+@PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")
 public class EachTeamController {
     @Autowired
     private TeamRepo teamRepo;

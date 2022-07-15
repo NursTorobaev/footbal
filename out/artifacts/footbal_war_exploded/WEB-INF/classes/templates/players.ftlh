@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="card-body">
                             <div id="datatables-reponsive_wrapper"
-                                 class="dataTables_wrapper dt-bootstrap5 no-footer">
+                                 class="table table-striped dataTable no-footer dtr-inline">
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <table id="datatables-reponsive"
@@ -41,9 +41,9 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                    <div class="text-end mt-2"><a href="team_add">Добавить</a></div>
                                 </div>
                             </div>
-                            <h5 class="text-end"><a href="player_add">Добавить</a></h5>
                         </div>
                     </div>
                 </div>
