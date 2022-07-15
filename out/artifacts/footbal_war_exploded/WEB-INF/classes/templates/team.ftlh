@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <h5 class="text-end"><a href="team_add">Добавить</a></h5>
+                            <div class="text-end mt-2"><a href="team_add">Добавить</a></div>
                         </div>
                     </div>
                 </div>

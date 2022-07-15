@@ -9,17 +9,20 @@ import java.util.Collections;
 import java.util.Set;
 
 @Entity
-@Table(name="consumers")
+@Table(name = "consumers")
 public class Consumer implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+    @Column(name = "username")
     private String username;
+    @Column(name = "password")
     private String password;
+    @Column(name = "active")
     private boolean active;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
-    @CollectionTable(name="consumer_role", joinColumns = @JoinColumn(name="consumer_id"))
+    @CollectionTable(name = "consumer_role", joinColumns = @JoinColumn(name = "consumer_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 

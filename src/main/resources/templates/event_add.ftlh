@@ -51,7 +51,7 @@
                                 <div class="table">
                                     <table id="teams" class="table">
                                         <thead>
-                                        <th>#</th>
+                                        <th>№</th>
                                         <th>Команда</th>
                                         <th>Удалить</th>
                                         </thead>

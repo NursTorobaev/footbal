@@ -35,7 +35,7 @@
                                 </div>
                             </div>
                         </div>
-                        <form action="/tournament/{id}" method="post">
+                        <form method="post">
                             <div class="row">
                                 <div class="col-6">
                                     <select name="firstTeam" id="firstTeam" class="form-control">
@@ -52,7 +52,7 @@
                                     </select>
                                 </div>
                                 <div class="text-end mt-2">
-                                    <button type="button" class="btn btn-success">Добавить матч</button>
+                                    <button type="submit" class="btn btn-success">Добавить матч</button>
                                 </div>
                             </div>
                         </form>

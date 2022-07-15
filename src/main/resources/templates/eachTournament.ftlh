@@ -19,15 +19,15 @@
                                            aria-describedby="datatables-reponsive_info">
                                         <thead>
                                         <tr>
-                                            <th>Наименование</th>
-                                            <th>Отдел</th>
+                                            <th>Первая команда</th>
+                                            <th>Вторая команда</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <#list teams as team>
+                                        <#list matches as match>
                                             <tr>
-                                                <td>${team.name}</td>
-                                                <td>${team.departmentName}</td>
+                                                <td>${match.firstTeam}</td>
+                                                <td>${match.secondTeam}</td>
                                             </tr>
                                         </#list>
                                         </tbody>
@@ -35,8 +35,30 @@
                                 </div>
                             </div>
                         </div>
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-6">
+                                    <select name="firstTeam" id="firstTeam" class="form-control">
+                                        <#list teams as team>
+                                            <option>${team.name}</option>
+                                        </#list>
+                                    </select>
+                                </div>
+                                <div class="col-6">
+                                    <select name="secondTeam" id="secondTeam" class="form-control">
+                                        <#list teams as team>
+                                            <option>${team.name}</option>
+                                        </#list>
+                                    </select>
+                                </div>
+                                <div class="text-end mt-2">
+                                    <button type="submit" class="btn btn-success">Добавить матч</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

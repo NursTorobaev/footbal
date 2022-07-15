@@ -131,6 +131,14 @@
         </div>
     </div>
     <script src="/static/js/app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Datatables Responsive
+            $("#datatables-reponsive").DataTable({
+                responsive: true
+            });
+        });
+    </script>
     </body>
     </html>
 </#macro>
