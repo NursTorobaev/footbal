@@ -33,7 +33,10 @@
                     </div>
                     <div class="col-6 text-end">
                         <p class="mb-0">
-                        <div class="text-end"><@l.logout/></div>
+                            <#import 'login.ftlh' as l>
+                            <div class="text-end">
+                                <@l.logout/>
+                            </div>
                         </p>
                     </div>
                 </div>
@@ -45,8 +48,7 @@
         </script>
         <script src="/static/js/app.js"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                // Datatables Responsive
+            document.addEventListener("DOMContentLoaded", function () {
                 $("#datatables-reponsive").DataTable({
                     responsive: true
                 });

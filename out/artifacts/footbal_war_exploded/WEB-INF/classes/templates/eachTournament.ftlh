@@ -35,17 +35,17 @@
                                 </div>
                             </div>
                         </div>
-                        <form method="post">
-                            <div class="row">
+                        <form action="/tournament/{id}" method="post">
+                            <div class="row mt-4">
                                 <div class="col-6">
-                                    <select name="firstTeam" id="firstTeam" class="form-control">
+                                    <select type="text" name="firstTeam" id="firstTeam" class="form-control">
                                         <#list teams as team>
                                             <option>${team.name}</option>
                                         </#list>
                                     </select>
                                 </div>
                                 <div class="col-6">
-                                    <select name="secondTeam" id="secondTeam" class="form-control">
+                                    <select type="text" name="secondTeam" id="secondTeam" class="form-control">
                                         <#list teams as team>
                                             <option>${team.name}</option>
                                         </#list>
@@ -58,7 +58,6 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

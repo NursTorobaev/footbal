@@ -20,15 +20,15 @@
                                            aria-describedby="datatables-reponsive_info">
                                         <thead>
                                         <tr>
-                                            <th>Наименование</th>
-                                            <th>Отдел</th>
+                                            <th>Первая команда</th>
+                                            <th>Вторая команда</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <#list teams as team>
+                                        <#list matches as match>
                                             <tr>
-                                                <td>${team.name}</td>
-                                                <td>${team.departmentName}</td>
+                                                <td>${match.firstTeam}</td>
+                                                <td>${match.secondTeam}</td>
                                             </tr>
                                         </#list>
                                         </tbody>

@@ -43,7 +43,7 @@ public class EachTournamentController {
         return "eachTournament";
     }
     @RequestMapping(value = "/tournament/{id}", method = RequestMethod.POST)
-    public String eachPost(@PathVariable("id") Long id, @RequestParam String firstTeam, @RequestParam String secondTeam){
+    public String eachPost(@PathVariable("id") long id, @RequestParam String firstTeam, @RequestParam String secondTeam){
         Tournament tournament = new Tournament();
         List<Tournament> tournaments = (List<Tournament>) tournamentRepo.findAll();
         for(Tournament tour:tournaments){
@@ -51,7 +51,6 @@ public class EachTournamentController {
         }
         Match match = new Match(firstTeam, secondTeam, 0, 0, tournament);
         matchRepo.save(match);
-        return "redirect:main";
+        return "eachTournament";
     }
-
 }
