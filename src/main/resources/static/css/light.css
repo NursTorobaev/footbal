@@ -5599,6 +5599,7 @@ textarea.form-control-lg {
     filter: invert(1) grayscale(100%) brightness(200%)
 }
 
+
 .toast {
     background-clip: padding-box;
     background-color: rgba(255, 255, 255, .85);
