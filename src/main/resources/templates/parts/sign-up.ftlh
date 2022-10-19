@@ -10,76 +10,30 @@
                                     <div class="m-sm-4">
                                         <form action="${path}" method="post">
                                             <div class="mb-3">
-                                                <label class="form-label">Username</label>
+                                                <label class="form-label">Пользователь</label>
                                                 <input type="text" name="username" class="form-control form-control-lg"
-                                                       placeholder="Enter your username" required>
+                                                       placeholder="Введите пользователя" required>
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label">Password</label>
+                                                <label class="form-label">Пароль</label>
                                                 <input class="form-control form-control-lg" type="password"
-                                                       id="password" name="password" placeholder="Enter your password"
-                                                       onchange="pass1()" required>
-                                                <small><p>[a-z A-Z 0-9] and password length must be at least 6</p>
+                                                       id="password" name="password" placeholder="Введите пароль"
+                                                       required>
+                                                <small><p>Введите в диапазоне [a-z A-Z 0-9] не менее 6 знаков</p>
                                                 </small>
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label">Confirm password</label>
+                                                <label class="form-label">Подтвердите пароль</label>
                                                 <input class="form-control form-control-lg" type="password"
                                                        id="password1" name="password1"
-                                                       placeholder="Confirm your password" onchange="pass2()" required>
+                                                       placeholder="Подтвердите ваш пароль" required>
                                             </div>
-                                            <!-- Include a polyfill for ES6 Promises (optional) for IE11 and Android browser -->
-                                            <script src="/static/js/min.js"></script>
-                                            <script>
-                                                function isCorrectPassword(s) {
-                                                    const alphabet = "abcdefghijklmnopqrstuvwxyz";
-                                                    const numbers = "0123456789";
-                                                    let ch = 0;
-                                                    for (let i of alphabet) {
-                                                        if (s.includes(i)) {
-                                                            ch++;
-                                                            break;
-                                                        }
-                                                    }
-                                                    for (let i of numbers) {
-                                                        if (s.includes(i)) {
-                                                            ch++;
-                                                            break;
-                                                        }
-                                                    }
-                                                    for (let i of alphabet.toUpperCase()) {
-                                                        if (s.includes(i)) {
-                                                            ch++;
-                                                            break;
-                                                        }
-                                                    }
-                                                    return ch === 3 && s.length >= 6;
-                                                }
-
-                                                function pass1() {
-                                                    let password = document.getElementById('password').value;
-                                                    if (!isCorrectPassword(password)) {
-                                                        Swal.fire("password isn't strong");
-                                                        document.getElementById('password').value = '';
-                                                    }
-                                                }
-
-                                                function pass2() {
-                                                    let password = document.getElementById('password1').value;
-                                                    let password1 = document.getElementById('password').value;
-                                                    if (!isCorrectPassword(password)) {
-                                                        Swal.fire("password isn't strong");
-                                                        document.getElementById('password1').value = '';
-                                                    } else if (password !== password1) {
-                                                        Swal.fire("passwords do not match");
-                                                        document.getElementById('password').value = '';
-                                                        document.getElementById('password1').value = '';
-                                                    }
-                                                }
-                                            </script>
-                                            <div><input type="submit" value="Sign In" class="btn btn-lg btn-primary">
+                                            <div>
+                                                <input type="submit" value="Войти" class="btn btn-lg btn-primary">
                                             </div>
-                                            <div><a class="text-end" href="/">Home</a></div>
+                                            <div class="mb-3">
+                                                <a class="text-end" href="/">Домой</a>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
