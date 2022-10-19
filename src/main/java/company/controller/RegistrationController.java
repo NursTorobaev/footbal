@@ -5,6 +5,7 @@ import company.entity.Consumer;
 import company.entity.Role;
 import company.repos.ConsumerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,22 +20,18 @@ public class RegistrationController {
     private ConsumerRepo consumerRepo;
 
     @GetMapping("/sign-up")
-    public String regGet(){
+    public String regGet() {
         return "sign-up";
     }
 
     @PostMapping("/sign-up")
     public String regPost(@RequestParam String username,
                           @RequestParam String password,
-                          Model model){
-        String hash = Hashing.sha256()
-                .hashString(password, StandardCharsets.UTF_8)
-                .toString();
+                          Model model) {
         Consumer consumer = new Consumer(username, password);
-        if(consumerRepo.findConsumerByUsername(username) != null){
+        if (consumerRepo.findConsumerByUsername(username) != null) {
             return "/error";
-        }
-        else{
+        } else {
             consumer.setActive(true);
             consumer.setRoles(Role.USER);
             consumerRepo.save(consumer);

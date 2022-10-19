@@ -35,7 +35,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="text-end mt-2"><a href="team_add">Добавить</a></div>
+                                    <div class="text-end mt-2"><a href="event_add">Добавить</a></div>
                                 </div>
                             </div>
                         </div>

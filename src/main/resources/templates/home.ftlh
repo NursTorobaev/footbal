@@ -21,7 +21,7 @@
                                             <thead>
                                             <tr>
                                                 <th style="width: 263px;">Наименование команды</th>
-                                                <th style="width: 250px;">Голы</th>
+                                                <th style="width: 250px;">Общие голы</th>
                                                 <th style="width: 250px;">Пропущенные</th>
                                                 <th style="width: 250px;">Победы</th>
                                                 <th style="width: 250px;">Поражения</th>

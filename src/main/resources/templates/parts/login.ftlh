@@ -10,24 +10,19 @@
                                     <div class="m-sm-4">
                                         <form action="${path}" method="post">
                                             <div class="mb-3">
-                                                <label class="form-label">Username</label>
+                                                <label class="form-label">Пользователь</label>
                                                 <input type="text" name="username" class="form-control form-control-lg"
                                                        placeholder="Enter your username"/>
                                             </div>
                                             <div class="mb-3">
-                                                <label class="form-label">Password</label>
+                                                <label class="form-label">Пароль</label>
                                                 <input class="form-control form-control-lg" type="password"
-                                                       id="password" name="password" placeholder="Enter your password" onchange="convert()"/>
+                                                       id="password" name="password" placeholder="Enter your password"/>
                                             </div>
-                                            <script>
-                                                function convert(){
-                                                    let a = document.getElementById("password").value;
-                                                }
-                                            </script>
-                                            <div><input type="submit" value="Sign In" class="btn btn-lg btn-primary">
+                                            <div><input type="submit" value="Войти" class="btn btn-lg btn-primary">
                                             </div>
                                             <div class="form-group-lg">
-                                                <a href="/sign-up">Sign Up</a>
+                                                <a href="/sign-up">Регистрация</a>
                                             </div>
                                         </form>
                                     </div>

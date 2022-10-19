@@ -1,6 +1,6 @@
 <#macro page>
     <!DOCTYPE html>
-    <html xmlns:th="http://www.thymeleaf.org" lang="ru">
+    <html xmlns:th="http://www.thymeleaf.org" lang="Russian">
     <head>
         <meta charset="UTF-8">
         <title>Home</title>
