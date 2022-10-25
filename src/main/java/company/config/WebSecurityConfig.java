@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception{
         LogoutConfigurer<HttpSecurity> httpSecurityLogoutConfigurer = http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/sign-up", "/static/**").permitAll()
+                .antMatchers("/", "/sign-up","/swagger-ui/user/{id}", "/static/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
