@@ -12,12 +12,12 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Пользователь</label>
                                                 <input type="text" name="username" class="form-control form-control-lg"
-                                                       placeholder="Enter your username"/>
+                                                       placeholder="Введите имя пользователя"/>
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Пароль</label>
                                                 <input class="form-control form-control-lg" type="password"
-                                                       id="password" name="password" placeholder="Enter your password"/>
+                                                       id="password" name="password" placeholder="Введите ваш пароль"/>
                                             </div>
                                             <div><input type="submit" value="Войти" class="btn btn-lg btn-primary">
                                             </div>

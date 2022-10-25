@@ -19,4 +19,5 @@ public class ConsumerController {
         model.addAttribute("consumers", consumerRepo.findAll());
         return "consumerList";
     }
+
 }
