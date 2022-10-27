@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="footbal:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/footbal</output-path>
+    <root id="archive" name="footbal_war.war">
+      <element id="artifact" artifact-name="footbal:war exploded" />
+    </root>
+  </artifact>
+</component>
