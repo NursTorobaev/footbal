@@ -32,7 +32,7 @@
                                                 <input type="submit" value="Войти" class="btn btn-lg btn-primary">
                                             </div>
                                             <div class="mb-3">
-                                                <a class="text-end" href="/">Домой</a>
+                                                <a class="text-end" href="/">Главная станица</a>
                                             </div>
                                         </form>
                                     </div>
